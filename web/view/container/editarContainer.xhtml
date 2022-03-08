@@ -14,17 +14,17 @@ and open the template in the editor.
     <ui:define name="corpo">
         <div class="container">
             <f:metadata>
-                <f:viewParam value="#{containerController.containerModel.idContainer}" name="idContainer"/>
+                <f:viewParam value="#{containerController.containerModel.idPessoa}" name="idContainer"/>
                 <f:viewAction action="#{containerController.buscarContainer()}" />
             </f:metadata>
             <h1>Editar Container</h1>
             <h:form class="novo">
-                <h:inputHidden id="idContainer" value="#{containerController.containerModel.idContainer}"/>
+                <h:inputHidden id="idContainer" value="#{containerController.containerModel.idPessoa}"/>
                 
                 <div class="form-row">
                     <div class="form-group col-md-9">
-                        <label for="nomeCampus">Nome do Cliente</label>                
-                        <h:inputText class="form-control" id="clienteNome" value="#{containerController.containerModel.clienteNome}"/>
+                        <label for="clienteNome">Nome do Cliente</label>                
+                        <h:inputText class="form-control" id="clienteNome" value="#{containerController.containerModel.pessoaNome}"/>
                     </div>
                 </div>
                 

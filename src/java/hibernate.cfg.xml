@@ -49,5 +49,6 @@ Contributor(s):
     <property name="hibernate.hbm2ddl.auto">update</property>
     <mapping class="com.container.model.containerModel"/>
     <mapping class="com.container.model.movimentacaoModel"/>
+    <mapping class="com.container.model.pessoaModel"/>
   </session-factory>
 </hibernate-configuration>

@@ -46,7 +46,7 @@ public class containerController {
     }
    
     public void buscarContainer() {
-        this.containerModel = this.containerRepository.buscarPorId(this.containerModel.getIdContainer());
+        this.containerModel = this.containerRepository.buscarPorId(this.containerModel.getIdPessoa());
     }
     public void getContainer() {
         this.containerModel = this.containerRepository.buscarPorId(this.containerModel.getIdContainer());

@@ -8,20 +8,12 @@ package com.container.model;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "container")
-public class containerModel implements Serializable {
+public class containerModel extends pessoaModel  implements Serializable {
 
-    @Id
-    @GeneratedValue
-    private long idContainer;
-
-    @Column(nullable = false, length = 80)
-    private String clienteNome;
 
     @Column(nullable = false, length = 80)
     private String containerNumero;
