@@ -47,8 +47,9 @@ Contributor(s):
     <property name="hibernate.connection.username">lucas</property>
     <property name="hibernate.connection.password">123456</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
-    <mapping class="com.container.model.containerModel"/>
-    <mapping class="com.container.model.movimentacaoModel"/>
     <mapping class="com.container.model.pessoaModel"/>
+    <mapping class="com.container.model.movimentacaoModel"/>
+    <mapping class="com.container.model.containerModel"/>
+    <mapping class="com.container.model.tipoMovi"/>
   </session-factory>
 </hibernate-configuration>

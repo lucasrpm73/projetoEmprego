@@ -8,10 +8,12 @@ package com.container.model;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "container")
+@PrimaryKeyJoinColumn(name = "idPessoa")
 public class containerModel extends pessoaModel  implements Serializable {
 
 
@@ -27,23 +29,7 @@ public class containerModel extends pessoaModel  implements Serializable {
     
     @Column(nullable = false, length = 80)
     private String containerCategoria;
-
-    public long getIdContainer() {
-        return idContainer;
-    }
-
-    public void setIdContainer(long idContainer) {
-        this.idContainer = idContainer;
-    }
-
-    public String getClienteNome() {
-        return clienteNome;
-    }
-
-    public void setClienteNome(String clienteNome) {
-        this.clienteNome = clienteNome;
-    }
-
+    
     public String getContainerNumero() {
         return containerNumero;
     }

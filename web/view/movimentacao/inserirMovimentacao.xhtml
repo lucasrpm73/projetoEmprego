@@ -19,25 +19,20 @@ and open the template in the editor.
                 <div class="form-row">
                     <div class="form-group col-md-5">
                         <label for="tipoMovimentacao">Tipo De Movimentação</label>
-                        <h:selectOneMenu class="form-control" id="TipoMovimentacao" value="#{movimentacaoController.movimentacaoModel.movimentacaoTipo}">
+                        <h:selectOneMenu class="form-control" id="TipoMovimentacao" value="#{movimentacaoController.movimentacaoModel.idMovimentacao}">
                             <f:selectItem itemValue = "" itemLabel = "Selecionar" />
-                            <f:selectItem itemValue = "Embarque" itemLabel = "Embarque" /> 
-                            <f:selectItem itemValue = "Descarga" itemLabel = "Descarga" />
-                            <f:selectItem itemValue = "Gate in" itemLabel = "Gate in" />
-                            <f:selectItem itemValue = "Gate out" itemLabel = "Gate out" />
-                            <f:selectItem itemValue = "Reposicionamento" itemLabel = "Reposicionamento" />
-                            <f:selectItem itemValue = "Pesagem" itemLabel = "Pesagem" />
-                            <f:selectItem itemValue = "Scanner" itemLabel = "Scanner" />
+                            <f:selectItem value="#{movimentacaoControlle}" />
                         </h:selectOneMenu>
                     </div>
-                    
+                    <!--
                     <div class="form-group col-md-5">
                         <label for="nomePessoa">Cliente</label>       
-                        <h:selectOneMenu class="form-control" id="idPessoa" value="#{containerController.containerModel.clienteNome}">
+                        <h:selectOneMenu class="form-control" id="idPessoa" value="#{containerController.containerModel.pessoaNome}">
                             <f:selectItem itemValue = "" itemLabel = "Selecionar"/>
-                            <f:selectItems value="#{containerController.containerModel.clienteNome}"/>
+                            <f:selectItems value="#{containerController.containerModel.pessoaNome}"/>
                         </h:selectOneMenu>
                     </div>
+                    -->
                 </div>
                 
                 
