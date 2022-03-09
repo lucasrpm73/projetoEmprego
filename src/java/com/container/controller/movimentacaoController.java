@@ -5,7 +5,9 @@
  */
 package com.container.controller;
 import com.container.model.movimentacaoModel;
+import com.container.model.tipoMovi;
 import com.container.repository.movimentacaoRepository;
+import com.container.repository.tipoMoviRepository;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -23,11 +25,13 @@ public class movimentacaoController {
     
     private movimentacaoModel movimentacaoModel;
     private movimentacaoRepository movimentacaoRepository;
+    private tipoMoviRepository tipoMoviRepository;
     private List<movimentacaoModel> listaDeMovimentacao;
     
     public movimentacaoController() {
         this.movimentacaoModel = new movimentacaoModel();
         this.movimentacaoRepository = new movimentacaoRepository();
+        this.tipoMoviRepository = new tipoMoviRepository();
         this.listaDeMovimentacao = new ArrayList<>();
     }
     
@@ -57,7 +61,17 @@ public class movimentacaoController {
         this.movimentacaoModel = this.movimentacaoRepository.buscarPorId(this.movimentacaoModel.getIdMovimentacao());
     }
 
-
+    
+     public List<SelectItem> getTiposMovis() {
+        ArrayList<SelectItem> itens = new ArrayList<SelectItem>();
+        List<tipoMovi> listaDeTipo = this.tipoMoviRepository.buscar();
+        for (tipoMovi tipo : listaDeTipo) {
+            itens.add(new SelectItem(tipo.getTipoMovi(), tipo.getTipoMovi()));
+        }
+        return itens;
+    }
+     
+     
     public List<SelectItem> getMovimentacoes() {
         ArrayList<SelectItem> itens = new ArrayList<SelectItem>();
         List<movimentacaoModel> listaDeMovimentacoes = this.movimentacaoRepository.buscarTodos();

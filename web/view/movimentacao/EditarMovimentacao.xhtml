@@ -22,18 +22,11 @@ and open the template in the editor.
                 <h:inputHidden id="idMovimentacao" value="#{movimentacaoController.movimentacaoModel.idMovimentacao}"/>
                 
                 <div class="form-row">
-                    <div class="form-group col-md-5">
-                        <label for="nomeCampus">Tipo de Movimentação</label>                
-                            <h:selectOneMenu class="form-control" id="TipoMovimentacao" value="#{movimentacaoController.movimentacaoModel.movimentacaoTipo}">
-                                <f:selectItem itemValue = "" itemLabel = "Selecionar" />
-                                <f:selectItem itemValue = "Embarque" itemLabel = "Embarque" /> 
-                                <f:selectItem itemValue = "Descarga" itemLabel = "Descarga" />
-                                <f:selectItem itemValue = "Gate in" itemLabel = "Gate in" />
-                                <f:selectItem itemValue = "Gate out" itemLabel = "Gate out" />
-                                <f:selectItem itemValue = "Reposicionamento" itemLabel = "Reposicionamento" />
-                                <f:selectItem itemValue = "Pesagem" itemLabel = "Pesagem" />
-                                <f:selectItem itemValue = "Scanner" itemLabel = "Scanner" />
-                            </h:selectOneMenu>
+                    <div class="form-group col-md-3">
+                        <label for="tipoMovimentacao">Tipo De Movimentação</label>
+                        <h:selectOneMenu class="form-control" id="TipoMovimentacao" value="#{movimentacaoController.movimentacaoModel.movimentacaoTipo}">
+                            <f:selectItems value="#{movimentacaoController.tiposMovis}"/>
+                        </h:selectOneMenu>
                     </div>
                 </div>
                 
@@ -53,7 +46,7 @@ and open the template in the editor.
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-2">
-                        <h:commandButton class="btn btn-secondary" value="voltar" action="buscarMovimentacao.xhtml"/>
+                        <h:commandButton class="btn btn-secondary" value="voltar" action="BuscarMovimentacao.xhtml"/>
                     </div>
                     <div class="form-group col-md-3">
                         <h:commandButton class="btn btn-primary" value="salvar alterações" action="#{movimentacaoController.salvarEdicao()}"/>

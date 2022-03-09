@@ -49,7 +49,7 @@ public class containerController {
         this.containerModel = this.containerRepository.buscarPorId(this.containerModel.getIdPessoa());
     }
     public void getContainer() {
-        this.containerModel = this.containerRepository.buscarPorId(this.containerModel.getIdContainer());
+        this.containerModel = this.containerRepository.buscarPorId(this.containerModel.getIdPessoa());
     }
 
 
@@ -57,7 +57,7 @@ public class containerController {
         ArrayList<SelectItem> itens = new ArrayList<SelectItem>();
         List<containerModel> listaDeContainers = this.containerRepository.buscarTodos();
         for (containerModel container : listaDeContainers) {
-            itens.add(new SelectItem(container.getIdContainer(), container.getClienteNome()));
+            itens.add(new SelectItem(container.getIdPessoa(), container.getPessoaNome()));
         }
         return itens;
     }

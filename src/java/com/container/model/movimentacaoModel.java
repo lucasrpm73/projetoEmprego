@@ -5,14 +5,18 @@
  */
 package com.container.model;
 import java.io.Serializable;
-import java.time.LocalDateTime;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 /**
  *
@@ -22,13 +26,20 @@ import javax.persistence.Temporal;
 @Table(name = "movimentacao")
 public class movimentacaoModel implements Serializable {
 
-    @Id
+  @Id
     @GeneratedValue
     private long idMovimentacao;
+
 /*
     @Column(nullable = false, length = 80)
     private String clienteNome;
 */
+    
+    @ManyToOne(fetch = FetchType.EAGER)
+    @Fetch(FetchMode.JOIN)
+    @JoinColumn(name = "idTipoMovi", insertable = true, updatable = true)
+    private tipoMovi tipoMovi;
+    
     @Column(nullable = false, length = 80)
     private String movimentacaoTipo;
      
@@ -48,13 +59,15 @@ public class movimentacaoModel implements Serializable {
     public void setIdMovimentacao(long idMovimentacao) {
         this.idMovimentacao = idMovimentacao;
     }
-    public String getMovimentacaoTipo() {
-        return movimentacaoTipo;
-    }
-
+    
     public void setMovimentacaoTipo(String movimentacaoTipo) {
         this.movimentacaoTipo = movimentacaoTipo;
     }
+
+    public String getMovimentacaoTipo() {
+        return movimentacaoTipo;
+    }
+    
 
     public Date getDataHoraInicio() {
         return dataHoraInicio;
@@ -72,7 +85,14 @@ public class movimentacaoModel implements Serializable {
         this.dataHoraFim = dataHoraFim;
     }
 
-    
+    public tipoMovi getTipoMovi() {
+        return tipoMovi;
+    }
+
+    public void setTipoMovi(tipoMovi tipoMovi) {
+        this.tipoMovi = tipoMovi;
+    }
+
     
     
    
