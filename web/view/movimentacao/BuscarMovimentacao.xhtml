@@ -23,7 +23,8 @@ and open the template in the editor.
                             <th scope="col">Tipo De Movimentação</th>
                             <th scope="col">Data e Hora inicio</th>
                             <th scope="col">Data e Hora fim</th>
-                            <th scope="col">#</th>
+                            <th scope="col">Cliente</th>
+                            
                         </tr>   
                     </thead>
                     <tbody> 
@@ -33,6 +34,7 @@ and open the template in the editor.
                                 <td>#{movimentacao.movimentacaoTipo}</td>
                                 <td>#{movimentacao.dataHoraInicio}</td>
                                 <td>#{movimentacao.dataHoraFim}</td>
+                                <td>#{movimentacao.pessoa}</td>
                                 <td>
                                     
                                     <h:form>

@@ -5,11 +5,11 @@
  */
 package com.container.controller;
 import com.container.model.movimentacaoModel;
+import com.container.model.pessoaModel;
 import com.container.model.tipoMovi;
 import com.container.repository.movimentacaoRepository;
 import com.container.repository.tipoMoviRepository;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import com.container.repository.pessoaRepository;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
@@ -26,12 +26,14 @@ public class movimentacaoController {
     private movimentacaoModel movimentacaoModel;
     private movimentacaoRepository movimentacaoRepository;
     private tipoMoviRepository tipoMoviRepository;
+    private pessoaRepository pessoaRepository;
     private List<movimentacaoModel> listaDeMovimentacao;
     
     public movimentacaoController() {
         this.movimentacaoModel = new movimentacaoModel();
         this.movimentacaoRepository = new movimentacaoRepository();
         this.tipoMoviRepository = new tipoMoviRepository();
+        this.pessoaRepository = new pessoaRepository();
         this.listaDeMovimentacao = new ArrayList<>();
     }
     
@@ -67,6 +69,15 @@ public class movimentacaoController {
         List<tipoMovi> listaDeTipo = this.tipoMoviRepository.buscar();
         for (tipoMovi tipo : listaDeTipo) {
             itens.add(new SelectItem(tipo.getTipoMovi(), tipo.getTipoMovi()));
+        }
+        return itens;
+    }
+     
+     public List<SelectItem> getPessoas() {
+        ArrayList<SelectItem> itens = new ArrayList<SelectItem>();
+        List<pessoaModel> listaDePessoas = this.pessoaRepository.buscar();
+        for (pessoaModel pessoa : listaDePessoas) {
+            itens.add(new SelectItem(pessoa.getPessoaNome()));
         }
         return itens;
     }

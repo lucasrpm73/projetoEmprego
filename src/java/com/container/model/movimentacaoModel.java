@@ -34,14 +34,11 @@ public class movimentacaoModel implements Serializable {
     @Column(nullable = false, length = 80)
     private String clienteNome;
 */
-    
-    @ManyToOne(fetch = FetchType.EAGER)
-    @Fetch(FetchMode.JOIN)
-    @JoinColumn(name = "idTipoMovi", insertable = true, updatable = true)
-    private tipoMovi tipoMovi;
-    
     @Column(nullable = false, length = 80)
     private String movimentacaoTipo;
+    
+     @Column(nullable = false, length = 80)
+    private String pessoa;
      
     @Column(nullable = false, length = 80)
     @Temporal(javax.persistence.TemporalType.TIMESTAMP)
@@ -85,16 +82,12 @@ public class movimentacaoModel implements Serializable {
         this.dataHoraFim = dataHoraFim;
     }
 
-    public tipoMovi getTipoMovi() {
-        return tipoMovi;
+    public String getPessoa() {
+        return pessoa;
     }
 
-    public void setTipoMovi(tipoMovi tipoMovi) {
-        this.tipoMovi = tipoMovi;
+    public void setPessoa(String pessoa) {
+        this.pessoa = pessoa;
     }
-
-    
-    
-   
-
+       
 }

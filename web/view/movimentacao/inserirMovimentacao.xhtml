@@ -23,15 +23,15 @@ and open the template in the editor.
                             <f:selectItems value="#{movimentacaoController.tiposMovis}"/>
                         </h:selectOneMenu>
                     </div>
-                    <!--
+                   
                     <div class="form-group col-md-5">
                         <label for="nomePessoa">Cliente</label>       
-                        <h:selectOneMenu class="form-control" id="idPessoa" value="#{containerController.containerModel.pessoaNome}">
+                        <h:selectOneMenu class="form-control" id="idPessoa" value="#{movimentacaoController.movimentacaoModel.pessoa}">
                             <f:selectItem itemValue = "" itemLabel = "Selecionar"/>
-                            <f:selectItems value="#{containerController.containerModel.pessoaNome}"/>
+                            <f:selectItems value="#{movimentacaoController.pessoas}"/>
                         </h:selectOneMenu>
                     </div>
-                    -->
+                    
                 </div>
                 
                 
