@@ -40,6 +40,17 @@ public class movimentacaoRepository {
         return listaDeMovimentacao;
     }
     
+     public List<movimentacaoModel> buscarOrdenarCliente(){
+        this.session = HibernateConector.getSessionFactory().openSession();
+        this.transaction = session.beginTransaction();
+        String nome = null;
+        List<movimentacaoModel> listaDeMovimentacao = this.session.createQuery("from movimentacaoModel WHERE pessoa=" +nome).list();
+        
+        this.transaction.commit();
+        this.session.close();
+        return listaDeMovimentacao;
+    }
+    
     public void remover(long idMovimentacao){
         this.session = HibernateConector.getSessionFactory().openSession();
         this.transaction = session.beginTransaction();
@@ -62,5 +73,6 @@ public class movimentacaoRepository {
         this.session.close();
         return movimentacao;
     }
+
 }
 

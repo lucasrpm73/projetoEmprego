@@ -95,6 +95,10 @@ public class movimentacaoController {
     public void buscarTodosMovimentacoes() {
         this.listaDeMovimentacao = this.movimentacaoRepository.buscarTodos();
     }
+    public void buscarPorCliente() {
+        this.listaDeMovimentacao = this.movimentacaoRepository.buscarOrdenarCliente();
+        
+    }
 
     public movimentacaoModel getMovimentacaoModel() {
         return movimentacaoModel;
